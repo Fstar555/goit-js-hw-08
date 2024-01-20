@@ -64,13 +64,13 @@ const images = [
   },
 ];
 
-
 ("use strict");
 
 const galleryList = document.querySelector(".gallery");
 
-const galleryItems = images.reduce(html, galleryItem) => (
-  html + 
+const galleryItems = images.reduce(
+  (html, galleryItem) =>
+    html +
     `<li class="gallery-item">
   <a class="gallery-link" href="${galleryItem.original}.jpg">
     <img
@@ -81,15 +81,14 @@ const galleryItems = images.reduce(html, galleryItem) => (
     />
   </a>
 </li>`,
-    ""
-  );
+  ""
+);
 
-galleryList.addEventListener("beforeend", galleryItems);
-
+galleryList.insertAdjacentHTML("beforeend", galleryItems);
 
 const handleKeydown = (elem) => {
   event.preventDefault();
-  if (event.target.nodeName !=== "IMG") {
+  if (event.target.nodeName !== "IMG") {
     return;
   }
 
@@ -102,11 +101,11 @@ const handleKeydown = (elem) => {
     {
       onSow: () => {
         document.addEventListener("keydown", handleKeydown);
-      };
+      },
 
       onClose: () => {
         document.removeEventListener("keydown", handleKeydown);
-      };
+      },
     }
   );
 
