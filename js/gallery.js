@@ -86,7 +86,7 @@ const galleryItems = images.reduce(
 
 galleryList.insertAdjacentHTML("beforeend", galleryItems);
 
-const handleKeydown = (elem) => {
+const handleClick = (elem) => {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") {
     return;
