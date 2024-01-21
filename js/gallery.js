@@ -94,7 +94,7 @@ const handleClick = (elem) => {
 
   const link = event.target.dataset.source;
 
-  const instance = basicLightBox.create(
+  const instance = basicLightbox.create(
     `<div class="modal">
       <img width="1400" height="900" src="${link}"
     </div> `,
